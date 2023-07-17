@@ -20,7 +20,9 @@
 
         <p><%= sanitize(product.description) %></p>
 
-        <div class="font-bold mt-3"><%= product.price %></div>
+        <div class="font-bold mt-3">
+          <%= number_to_currency(product.price, :unit =>'€') %>
+        </div>
       </div>
     </li>
     <% end %>
