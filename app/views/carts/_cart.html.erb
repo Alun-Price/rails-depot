@@ -1,5 +1,5 @@
 <div id="<%= dom_id cart %>">
-  <h2 class="font-bold text-lg mb-3">Your Cart</h2>
+  <h2 class="font-bold text-lg mb-3 ml-6">Your Cart</h2>
 
   <table class="table-auto">
     <%= render cart.line_items %>
@@ -13,5 +13,5 @@
     </tfoot>  
   </table>
 
-  <%= button_to 'Empty Cart', cart, method: :delete, class: 'ml-4 rounded-lg py-1 px-2 text-white bg-green-600' %>
+  <%= button_to 'Empty Cart', cart, method: :delete, class: 'ml-4 my-6 rounded-lg py-1 px-2 text-white bg-green-600' %>
 </div>
