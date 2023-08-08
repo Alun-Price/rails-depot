@@ -1,51 +1,53 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class OrdersTest < ApplicationSystemTestCase
   setup do
     @order = orders(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit orders_url
-    assert_selector "h1", text: "Orders"
+    assert_selector 'h1', text: 'Orders'
   end
 
-  test "should create order" do
+  test 'should create order' do
     visit orders_url
-    click_on "New order"
+    click_on 'New order'
 
-    fill_in "Address", with: @order.address
-    fill_in "Email", with: @order.email
-    fill_in "Name", with: @order.name
-    fill_in "Pay type", with: @order.pay_type
-    click_on "Create Order"
+    fill_in 'Address', with: @order.address
+    fill_in 'Email', with: @order.email
+    fill_in 'Name', with: @order.name
+    fill_in 'Pay type', with: @order.pay_type
+    click_on 'Create Order'
 
-    assert_text "Order was successfully created"
-    click_on "Back"
+    assert_text 'Order was successfully created'
+    click_on 'Back'
   end
 
-  test "should update Order" do
+  test 'should update Order' do
     visit order_url(@order)
-    click_on "Edit this order", match: :first
+    click_on 'Edit this order', match: :first
 
-    fill_in "Address", with: @order.address
-    fill_in "Email", with: @order.email
-    fill_in "Name", with: @order.name
-    fill_in "Pay type", with: @order.pay_type
-    click_on "Update Order"
+    fill_in 'Address', with: @order.address
+    fill_in 'Email', with: @order.email
+    fill_in 'Name', with: @order.name
+    fill_in 'Pay type', with: @order.pay_type
+    click_on 'Update Order'
 
-    assert_text "Order was successfully updated"
-    click_on "Back"
+    assert_text 'Order was successfully updated'
+    click_on 'Back'
   end
 
-  test "should destroy Order" do
+  test 'should destroy Order' do
     visit order_url(@order)
-    click_on "Destroy this order", match: :first
+    click_on 'Destroy this order', match: :first
 
-    assert_text "Order was successfully destroyed"
+    assert_text 'Order was successfully destroyed'
   end
 
-  test "check dynamic fields" do
+  test 'check dynamic fields' do
     visit store_index_url
 
     click_on 'Add to Cart', match: :first
@@ -65,7 +67,7 @@ class OrdersTest < ApplicationSystemTestCase
     assert has_no_field? 'Credit card number'
     assert has_no_field? 'Expiration date'
     assert has_no_field? 'Po number'
-    
+
     select 'Credit card', from: 'Pay type'
 
     assert has_no_field? 'Routing number'
@@ -75,7 +77,7 @@ class OrdersTest < ApplicationSystemTestCase
     assert has_no_field? 'Po number'
 
     select 'Purchase order', from: 'Pay type'
-    
+
     assert has_no_field? 'Routing number'
     assert has_no_field? 'Account number'
     assert has_no_field? 'Credit card number'
