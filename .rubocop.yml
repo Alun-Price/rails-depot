@@ -10,3 +10,6 @@ Metrics/AbcSize:
 
 Metrics/MethodLength:
   Enabled: false
+
+Style/StringConcatenation:
+  Enabled: false

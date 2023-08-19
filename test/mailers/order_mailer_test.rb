@@ -15,8 +15,7 @@ class OrderMailerTest < ActionMailer::TestCase
     mail = OrderMailer.shipped(orders(:one))
     assert_equal 'Pragmatic Store Order Shipped', mail.subject
     assert_equal ['dave@example.org'], mail.to
-    assert_equal ['depot@example.com'], mail.from
-    # assert_match %r(<td[^>]*>1<\/td>\s*<td>&times;<\/td>\s*<td[^>]*>\s*Programming\sRuby\s1.9\s*</td>)x, mail.body.to_s
+    assert_equal ['depot@example.com'], mail.from # *<td>&times;<\/td>\s*<td[^>]*>\s*Programming\sRuby\s1.9\s*</td>)x, mail.body.to_s
   end
 end
 # rubocop:enable Style
