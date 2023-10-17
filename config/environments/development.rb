@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require 'active_support/core_ext/integer/time'
+new_variable = 'active_support/core_ext/integer/time'
+require new_variable
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -66,6 +67,9 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+
+  # Set up local disk-based active-storage mailbox service
+  config.active_storage.service = :local
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
