@@ -9,6 +9,9 @@ Rails.application.routes.draw do # rubocop:disable Style/FrozenStringLiteralComm
   get 'sessions/create'
   get 'sessions/destroy'
 
+  # START_HIGHLIGHT
+  resources :support_requests, only: %i[ index update ]
+  # END_HIGHLIGHT
   resources :users
   resources :products do
     get :who_bought, on: :member
