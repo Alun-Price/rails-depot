@@ -38,14 +38,16 @@ From Sam Ruby's "Agile Web Development with Rails7" book.
 - during checkout we capture the contact and payment details and then display a receipt page (handling payment is vague at this point!)
 
 **Rough sketch of Buyer Page Flow**
-![alt text](image.png)
+
+![Rough sketch of Buyer Page Flow](image.png)
 
 Seller logs in
 - seller sees a menu letting them create or view a product or ship existing orders
 - when viewing a product the seller can edit or delete the product
 
 **Rough sketch of Seller Page Flow**
-![alt text](image-1.png)
+
+![Rough sketch of Seller Page Flow](image-1.png)
 
 Data
 - we need to think about the data that we're going to be working with
@@ -53,7 +55,8 @@ Data
 - `?` represents the idea that we need somewhere (other than the transient cart) to store the list of products that the user bought - we'll resolve this as we go!!
 
 **Rough sketch of Data Flow**
-![alt text](image-2.png)
+
+![Rough sketch of Data Flow](image-2.png)
 
 ### Task A : Creating the Application
 
